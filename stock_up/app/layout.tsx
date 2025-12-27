@@ -1,10 +1,16 @@
-import React from 'react'
-import './globals.css'
+import "./globals.css";
+import { AppLayout } from "@/components/Layout/Layout";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <AppLayout>{children}</AppLayout>
+      </body>
     </html>
-  )
+  );
 }

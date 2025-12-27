@@ -1,33 +1,36 @@
-'use client'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Link from "next/link";
+import { LayoutDashboard, Package, ArrowDownUp, Users, Settings } from "lucide-react";
 
-const LinkItem = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const path = usePathname()
-  const active = path === href
-  return (
-    <Link href={href} className={'block py-2 px-3 rounded-md text-gray-600 hover:text-primary ' + (active ? 'font-semibold text-primary' : '')}>
-      {children}
-    </Link>
-  )
-}
 
-export default function Sidebar() {
-  return (
-    <aside className="w-64 bg-white shadow-sm h-screen p-6 flex flex-col gap-6">
-      <div>
-        <h1 className="text-2xl font-semibold text-primary">Almox</h1>
-        <p className="text-sm text-gray-400 mt-1">Gestão de Almoxarifado</p>
-      </div>
+const menu = [
+{ label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+{ label: "Produtos", href: "/produtos", icon: Package },
+{ label: "Entradas / Saídas", href: "/movimentacoes", icon: ArrowDownUp },
+{ label: "Usuários", href: "/usuarios", icon: Users },
+{ label: "Configurações", href: "/configuracoes", icon: Settings },
+];
 
-      <nav className="flex flex-col gap-1 text-gray-600">
-        <LinkItem href="/dashboard">Dashboard</LinkItem>
-        <LinkItem href="/produtos">Produtos</LinkItem>
-        <LinkItem href="/entradas">Entradas</LinkItem>
-        <LinkItem href="/saidas">Saídas</LinkItem>
-      </nav>
 
-      <div className="mt-auto text-sm text-gray-400">v0.1 - Frontend</div>
-    </aside>
-  )
+export function Sidebar() {
+return (
+<aside className="w-64 bg-slate-900 text-slate-100 flex flex-col">
+<div className="h-16 flex items-center px-6 font-bold text-lg text-blue-400">
+StockUp
+</div>
+
+
+<nav className="flex-1 px-4 space-y-1">
+{menu.map((item) => (
+<Link
+key={item.label}
+href={item.href}
+className="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition"
+>
+<item.icon size={18} />
+<span className="text-sm">{item.label}</span>
+</Link>
+))}
+</nav>
+</aside>
+);
 }
