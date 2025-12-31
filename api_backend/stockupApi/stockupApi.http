@@ -1,0 +1,6 @@
+@stockupApi_HostAddress = http://localhost:5032
+
+GET {{stockupApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
