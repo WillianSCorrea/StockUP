@@ -52,7 +52,7 @@ namespace stockupApi.Application.DTOs
 
         public record ProductMovementDto
         {
-            public Guid Id { get; set; }
+            public Guid ProductId { get; set; }
             public int CurrentStock { get; set; }
         }
     }
