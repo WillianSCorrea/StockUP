@@ -16,7 +16,6 @@ namespace stockupApi.Application.DTOs
             public int CurrentStock { get; set; }
             public DateTime CreatedAt { get; set; }
             public DateTime? UpdatedAt { get; set; }
-
             public string Category { get; set; }
             public int MinimumStock { get; set; }
             public int UserId { get; set; }
