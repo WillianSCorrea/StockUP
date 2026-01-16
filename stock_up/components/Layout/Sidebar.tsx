@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutDashboard, Package, ArrowDownUp, Users, Settings } from "lucide-react";
+import { LayoutDashboard, Package, ArrowDownUp,Truck, Users, Settings } from "lucide-react";
 
 
 const menu = [
@@ -8,6 +8,7 @@ const menu = [
 { label: "Entradas / Saídas", href: "/movimentacoes", icon: ArrowDownUp },
 { label: "Usuários", href: "/usuarios", icon: Users },
 { label: "Configurações", href: "/configuracoes", icon: Settings },
+{ label: "Fornecedores", href: "/fornecedores", icon: Truck }
 ];
 
 
